@@ -91,13 +91,6 @@ object Libs {
     /**
      * https://kotlinlang.org/
      */
-    const val kotlin_scripting_compiler_embeddable: String =
-            "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:" +
-            Versions.org_jetbrains_kotlin
-
-    /**
-     * https://kotlinlang.org/
-     */
     const val kotlin_stdlib: String = "org.jetbrains.kotlin:kotlin-stdlib:" +
             Versions.org_jetbrains_kotlin
 
@@ -113,27 +106,9 @@ object Libs {
     const val lifecycle_extensions: String = "androidx.lifecycle:lifecycle-extensions:" +
             Versions.androidx_lifecycle
 
-    /**
-     * https://github.com/JetBrains/anko
-     */
-    const val anko_commons: String = "org.jetbrains.anko:anko-commons:" +
-            Versions.org_jetbrains_anko
+    const val lifecycle_viewmodel: String = "androidx.lifecycle:lifecycle-viewmodel-ktx" +
+            Versions.androidx_lifecycle
 
-    /**
-     * https://github.com/JetBrains/anko
-     */
-    const val anko_design: String = "org.jetbrains.anko:anko-design:" + Versions.org_jetbrains_anko
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val work_runtime: String = "android.arch.work:work-runtime:" + Versions.android_arch_work
-
-    const val work_firebase: String = "android.arch.work:work-firebase:" +
-            Versions.android_arch_work
-
-    const val multidex_instrumentation: String = "androidx.multidex:multidex-instrumentation:" +
-            Versions.androidx_multidex
 
     const val multidex: String = "androidx.multidex:multidex:" + Versions.androidx_multidex
 
@@ -166,70 +141,6 @@ object Libs {
     const val dagger_compiler: String = "com.google.dagger:dagger-compiler:" +
             Versions.com_google_dagger
 
-    /**
-     * http://ormlite.sourceforge.net/
-     */
-    const val ormlite_android: String = "com.j256.ormlite:ormlite-android:" +
-            Versions.com_j256_ormlite
-
-    /**
-     * http://ormlite.sourceforge.net/
-     */
-    const val ormlite_core: String = "com.j256.ormlite:ormlite-core:" + Versions.com_j256_ormlite
-
-    /**
-     * https://github.com/JakeWharton/butterknife/
-     */
-    const val butterknife: String = "com.jakewharton:butterknife:" + Versions.com_jakewharton
-
-    /**
-     * https://github.com/JakeWharton/butterknife/
-     */
-    const val butterknife_compiler: String = "com.jakewharton:butterknife-compiler:" +
-            Versions.com_jakewharton
-
-    /**
-     * https://developer.android.com/testing
-     */
-    const val androidx_test_rules: String = "androidx.test:rules:" + Versions.androidx_test
-
-    /**
-     * https://developer.android.com/testing
-     */
-    const val androidx_test_runner: String = "androidx.test:runner:" + Versions.androidx_test
-
-    /**
-     * https://github.com/mockito/mockito
-     */
-    const val mockito_android: String = "org.mockito:mockito-android:" + Versions.org_mockito
-
-    /**
-     * https://github.com/mockito/mockito
-     */
-    const val mockito_core: String = "org.mockito:mockito-core:" + Versions.org_mockito
-
-    /**
-     * https://github.com/mockito/mockito
-     */
-    const val mockito_inline: String = "org.mockito:mockito-inline:" + Versions.org_mockito
-
-    /**
-     * https://developer.android.com/studio
-     */
-    const val com_android_tools_build_gradle: String = "com.android.tools.build:gradle:" +
-            Versions.com_android_tools_build_gradle
-
-    const val io_fabric_tools_gradle: String = "io.fabric.tools:gradle:" +
-            Versions.io_fabric_tools_gradle
-
-    const val com_github_ben_manes_versions_gradle_plugin: String =
-            "com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin:" +
-            Versions.com_github_ben_manes_versions_gradle_plugin
-
-    const val de_fayard_buildsrcversions_gradle_plugin: String =
-            "de.fayard.buildSrcVersions:de.fayard.buildSrcVersions.gradle.plugin:" +
-            Versions.de_fayard_buildsrcversions_gradle_plugin
-
     const val picasso2_okhttp3_downloader: String =
             "com.jakewharton.picasso:picasso2-okhttp3-downloader:" +
             Versions.picasso2_okhttp3_downloader
@@ -237,27 +148,11 @@ object Libs {
     const val retrofit_adapter_rxjava2_deprecated: String =
             "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:" +
             Versions.retrofit2_rxjava2_adapter
-
-    const val play_services_analytics: String = "com.google.android.gms:play-services-analytics:" +
-            Versions.play_services_analytics
-
-    /**
-     * https://github.com/thoughtbot/expandable-recycler-view
-     */
-    const val expandablerecyclerview: String = "com.thoughtbot:expandablerecyclerview:" +
-            Versions.expandablerecyclerview
-
-    const val play_services_location: String = "com.google.android.gms:play-services-location:" +
-            Versions.play_services_location
-
     /**
      * https://github.com/square/okhttp
      */
     const val okhttp_urlconnection: String = "com.squareup.okhttp3:okhttp-urlconnection:" +
             Versions.okhttp_urlconnection
-
-    const val play_services_vision: String = "com.google.android.gms:play-services-vision:" +
-            Versions.play_services_vision
 
     /**
      * https://github.com/square/okhttp
@@ -266,135 +161,20 @@ object Libs {
             Versions.logging_interceptor
 
     /**
-     * https://github.com/googlemaps/android-maps-utils
-     */
-    const val android_maps_utils: String = "com.google.maps.android:android-maps-utils:" +
-            Versions.android_maps_utils
-
-    const val firebase_messaging: String = "com.google.firebase:firebase-messaging:" +
-            Versions.firebase_messaging
-
-    /**
-     * http://developer.android.com/tools/extras/support-library.html
-     */
-    const val legacy_support_v13: String = "androidx.legacy:legacy-support-v13:" +
-            Versions.legacy_support_v13
-
-    const val play_services_auth: String = "com.google.android.gms:play-services-auth:" +
-            Versions.play_services_auth
-
-    const val play_services_base: String = "com.google.android.gms:play-services-base:" +
-            Versions.play_services_base
-
-    const val play_services_maps: String = "com.google.android.gms:play-services-maps:" +
-            Versions.play_services_maps
-
-    const val play_services_gcm: String = "com.google.android.gms:play-services-gcm:" +
-            Versions.play_services_gcm
-
-    /**
-     * https://github.com/jgilfelt/android-sqlite-asset-helper
-     */
-    const val sqliteassethelper: String = "com.readystatesoftware.sqliteasset:sqliteassethelper:" +
-            Versions.sqliteassethelper
-
-    /**
      * http://tools.android.com
      */
     const val constraintlayout: String = "androidx.constraintlayout:constraintlayout:" +
             Versions.constraintlayout
-
-    const val advrecyclerview: String =
-            "com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:" + Versions.advrecyclerview
-
-    const val firebase_config: String = "com.google.firebase:firebase-config:" +
-            Versions.firebase_config
-
-    const val google_services: String = "com.google.gms:google-services:" + Versions.google_services
-
-    const val exoplayer_core: String = "com.google.android.exoplayer:exoplayer-core:" +
-            Versions.exoplayer_core
-
-    const val exoplayer_dash: String = "com.google.android.exoplayer:exoplayer-dash:" +
-            Versions.exoplayer_dash
-
-    /**
-     * https://github.com/nhaarman/mockito-kotlin
-     */
-    const val mockito_kotlin: String = "com.nhaarman:mockito-kotlin:" + Versions.mockito_kotlin
-
-    /**
-     * https://developer.android.com/testing
-     */
-    const val espresso_core: String = "androidx.test.espresso:espresso-core:" +
-            Versions.espresso_core
-
-    const val exoplayer_hls: String = "com.google.android.exoplayer:exoplayer-hls:" +
-            Versions.exoplayer_hls
-
-    const val firebase_core: String = "com.google.firebase:firebase-core:" + Versions.firebase_core
-
-    /**
-     * https://github.com/JakeWharton/sdk-manager-plugin
-     */
-    const val gradle_plugin: String = "com.jakewharton.sdkmanager:gradle-plugin:" +
-            Versions.gradle_plugin
-
-    /**
-     * https://github.com/square/okhttp
-     */
-    const val mockwebserver: String = "com.squareup.okhttp3:mockwebserver:" + Versions.mockwebserver
-
-    const val okhttp_digest: String = "com.burgstaller:okhttp-digest:" + Versions.okhttp_digest
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val core_testing: String = "androidx.arch.core:core-testing:" + Versions.core_testing
-
-    const val exoplayer_ui: String = "com.google.android.exoplayer:exoplayer-ui:" +
-            Versions.exoplayer_ui
 
     /**
      * https://developer.android.com/jetpack/androidx
      */
     const val recyclerview: String = "androidx.recyclerview:recyclerview:" + Versions.recyclerview
 
-    const val crashlytics: String = "com.crashlytics.sdk.android:crashlytics:" +
-            Versions.crashlytics
-
-    /**
-     * https://developer.android.com/studio
-     */
-    const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
-
-    /**
-     * http://robolectric.org
-     */
-    const val robolectric: String = "org.robolectric:robolectric:" + Versions.robolectric
-
-    /**
-     * http://simple.sourceforge.net
-     */
-    const val simple_xml: String = "org.simpleframework:simple-xml:" + Versions.simple_xml
-
-    /**
-     * http://github.com/segmentio/analytics-android
-     */
-    const val analytics: String = "com.segment.analytics.android:analytics:" + Versions.analytics
-
     /**
      * https://developer.android.com/jetpack/androidx
      */
     const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
-
-    const val exoplayer: String = "com.google.android.exoplayer:exoplayer:" + Versions.exoplayer
-
-    /**
-     * https://www.joda.org/joda-time/
-     */
-    const val joda_time: String = "joda-time:joda-time:" + Versions.joda_time
-
     /**
      * https://github.com/ReactiveX/RxAndroid
      */
@@ -409,8 +189,6 @@ object Libs {
      * https://github.com/ReactiveX/RxKotlin
      */
     const val rxkotlin: String = "io.reactivex.rxjava2:rxkotlin:" + Versions.rxkotlin
-
-    const val apache_net: String = "commons-net:commons-net:" + Versions.apache_net
 
     /**
      * https://github.com/square/picasso/
@@ -431,15 +209,6 @@ object Libs {
      */
     const val timber: String = "com.jakewharton.timber:timber:" + Versions.timber
 
-    /**
-     * https://developer.android.com/studio
-     */
-    const val aapt2: String = "com.android.tools.build:aapt2:" + Versions.aapt2
-
-    /**
-     * https://jsoup.org/
-     */
-    const val jsoup: String = "org.jsoup:jsoup:" + Versions.jsoup
 
     /**
      * http://junit.org
@@ -447,38 +216,7 @@ object Libs {
     const val junit: String = "junit:junit:" + Versions.junit
 
     /**
-     * https://bitbucket.org/cammyrepo/nvr-webrtc-lib
-     */
-    const val bran: String = "com.cammy:bran:" + Versions.bran
-
-    /**
      * https://github.com/google/gson
      */
     const val gson: String = "com.google.code.gson:gson:" + Versions.gson
-
-    /**
-     * http://github.com/square/otto/
-     */
-    const val otto: String = "com.squareup:otto:" + Versions.otto
-
-    /**
-     * http://rtyley.github.io/spongycastle/
-     */
-    const val spongycastle_pkix: String = "com.madgag.spongycastle:pkix:" + Versions.pkix
-
-    /**
-     * http://rtyley.github.io/spongycastle/
-     */
-    const val spongycastle_prov: String = "com.madgag.spongycastle:prov:" + Versions.prov
-
-    /**
-     * http://rtyley.github.io/spongycastle/
-     */
-    const val spongycastle_pg: String = "com.madgag.spongycastle:pg:" + Versions.pg
-
-    /**
-     * http://rtyley.github.io/spongycastle/
-     */
-    const val spongycastle_core: String = "com.madgag.spongycastle:core:" +
-            Versions.com_madgag_spongycastle_core
 }
