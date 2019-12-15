@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.michael"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Libs.kotlin_stdlib
+    implementation Libs.multidex
+    implementation Libs.appcompat
+    implementation Libs.recyclerview
+    implementation Libs.constraintlayout
+    implementation Libs.material
+    implementation Libs.gson
+    implementation Libs.rxjava
+    implementation Libs.rxandroid
+    implementation Libs.rxkotlin
+    implementation Libs.rxlifecycle
+    implementation Libs.rxlifecycle_components
+    implementation Libs.timber
+    implementation Libs.lifecycle_extensions
+    kapt Libs.lifecycle_compiler
+    implementation Libs.navigation_fragment_ktx
+    implementation Libs.navigation_ui_ktx
+    implementation Libs.dagger
+    implementation Libs.dagger_android
+    implementation Libs.dagger_android_support
+    kapt Libs.dagger_android_processor
+    kapt Libs.dagger_compiler
+    api Libs.retrofit_converter_gson
+    api Libs.retrofit_adapter_rxjava2
+    api Libs.okhttp
+    api Libs.okhttp_urlconnection
+    api Libs.okhttp_logging_interceptor
+    testImplementation Libs.junit
+}
