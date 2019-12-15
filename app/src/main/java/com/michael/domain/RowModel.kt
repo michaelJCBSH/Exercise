@@ -1,3 +1,10 @@
 package com.michael.domain
 
-data class RowModel(val title: String, val description: String, val imageURL: String)
+import com.google.gson.annotations.SerializedName
+
+class RowModel {
+    var title: String? = null
+    var description: String? = null
+    @SerializedName("imageHref")
+    var image_href: String? = null
+} 

@@ -7,6 +7,7 @@ import kotlin.String
  *   `$ ./gradlew buildSrcVersions`
  */
 object Libs {
+
     /**
      * https://developer.android.com/topic/libraries/architecture/index.html
      */
@@ -17,8 +18,8 @@ object Libs {
      * https://developer.android.com/topic/libraries/architecture/index.html
      */
     const val navigation_safe_args_gradle_plugin: String =
-            "androidx.navigation:navigation-safe-args-gradle-plugin:" +
-            Versions.android_arch_navigation
+        "androidx.navigation:navigation-safe-args-gradle-plugin:" +
+                Versions.android_arch_navigation
 
     /**
      * https://developer.android.com/topic/libraries/architecture/index.html
@@ -106,11 +107,8 @@ object Libs {
     const val lifecycle_extensions: String = "androidx.lifecycle:lifecycle-extensions:" +
             Versions.androidx_lifecycle
 
-    const val lifecycle_viewmodel: String = "androidx.lifecycle:lifecycle-viewmodel-ktx" +
+    const val lifecycle_viewmodel: String = "androidx.lifecycle:lifecycle-viewmodel-ktx:" +
             Versions.androidx_lifecycle
-
-
-    const val multidex: String = "androidx.multidex:multidex:" + Versions.androidx_multidex
 
     /**
      * https://github.com/google/dagger

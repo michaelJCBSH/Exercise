@@ -1,14 +1,17 @@
 package com.michael.presentation
 
-import android.content.ClipboardManager
-import androidx.lifecycle.ViewModelProviders
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.michael.DaggerFragmentX
 import com.michael.R
 import com.michael.domain.RowModel
@@ -23,7 +26,7 @@ class ListFragment : DaggerFragmentX() {
     internal lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var viewModel: ListViewModel
-    private val adapter = Adapter()
+    private lateinit var adapter: Adapter
     private val layoutManager: androidx.recyclerview.widget.GridLayoutManager =
         androidx.recyclerview.widget.GridLayoutManager(context, 1)
 
@@ -36,7 +39,6 @@ class ListFragment : DaggerFragmentX() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        list.adapter = adapter
         list.layoutManager = layoutManager
         swipeLayout.isEnabled = true
         swipeLayout.setOnRefreshListener {
@@ -46,6 +48,8 @@ class ListFragment : DaggerFragmentX() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        adapter = Adapter(context!!)
+        list.adapter = adapter
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(ListViewModel::class.java)
         viewModel.bindViewModel()
     }
@@ -65,7 +69,7 @@ class ListFragment : DaggerFragmentX() {
         viewModel.loadData()
     }
 
-    inner class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
+    inner class Adapter(private val context: Context) : RecyclerView.Adapter<Adapter.ViewHolder>() {
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -77,8 +81,19 @@ class ListFragment : DaggerFragmentX() {
         override fun getItemCount(): Int = rows.size
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.itemView.title.text = rows[position].title
-            holder.itemView.description.text = rows[position].description
+            rows[position].run {
+                holder.itemView.title.text = title
+                holder.itemView.description.text = description
+                val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
+                Glide.with(context).load(rows[position].image_href?.toHTTPS()).apply(requestOptions)
+                    .placeholder(R.mipmap.placeholder)
+                    .into(holder.itemView.image)
+
+            }
+        }
+
+        private fun String.toHTTPS(): String {
+            return replace("http", "https")
         }
 
         private val rows: MutableList<RowModel> = mutableListOf()

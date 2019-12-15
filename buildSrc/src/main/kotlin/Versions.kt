@@ -22,8 +22,6 @@ object Versions {
 
     const val androidx_lifecycle: String = "2.1.0"
 
-    const val androidx_multidex: String = "2.0.0"
-
     const val com_google_dagger: String = "2.24" // available: "2.25.2"
 
     const val de_fayard_buildsrcversions_gradle_plugin: String = "0.7.0"

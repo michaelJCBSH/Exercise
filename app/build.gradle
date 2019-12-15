@@ -31,7 +31,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libs.kotlin_stdlib
-    implementation Libs.multidex
     implementation Libs.appcompat
     implementation Libs.recyclerview
     implementation Libs.constraintlayout
@@ -40,16 +39,11 @@ dependencies {
     implementation Libs.rxjava
     implementation Libs.rxandroid
     implementation Libs.rxkotlin
-    implementation Libs.rxlifecycle
-    implementation Libs.rxlifecycle_components
     implementation Libs.timber
     implementation Libs.lifecycle_extensions
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation Libs.lifecycle_viewmodel
-    implementation Libs.lifecycle_viewmodel
     kapt Libs.lifecycle_compiler
-    implementation Libs.navigation_fragment_ktx
-    implementation Libs.navigation_ui_ktx
     implementation Libs.dagger
     implementation Libs.dagger_android
     implementation Libs.dagger_android_support
@@ -61,4 +55,8 @@ dependencies {
     api Libs.okhttp_urlconnection
     api Libs.okhttp_logging_interceptor
     testImplementation Libs.junit
+    implementation Libs.navigation_fragment_ktx
+    implementation Libs.navigation_ui_ktx
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    kapt 'com.github.bumptech.glide:compiler:4.10.0'
 }

@@ -1,5 +1,6 @@
 package com.michael
 
+import com.bumptech.glide.Glide
 import com.michael.data.RepositoryImpl
 import com.michael.domain.Repository
 import dagger.Binds
