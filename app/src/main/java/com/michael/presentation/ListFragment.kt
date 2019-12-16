@@ -1,5 +1,6 @@
 package com.michael.presentation
 
+import android.animation.AnimatorInflater
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -75,7 +76,9 @@ class ListFragment : DaggerFragmentX() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val v =
                 LayoutInflater.from(parent.context).inflate(R.layout.row_item_layout, parent, false)
-            return ViewHolder(v)
+            val holder = ViewHolder(v)
+            holder.itemView.stateListAnimator = AnimatorInflater.loadStateListAnimator(context, R.animator.list_item_elevation)
+            return holder
         }
 
         override fun getItemCount(): Int = rows.size
