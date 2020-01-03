@@ -5,13 +5,15 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - uses: actions/checkout@v1
+      - name: Bundle Install
+        run: bundle install
+      - name: Bundle update
+        run: bundle update
+      - name: Bundle update fastlane
+        run: bundle update fastlane
+      - name: Run a multi-line script
+        run: bundle exec fastlane build
